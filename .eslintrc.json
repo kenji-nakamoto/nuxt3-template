@@ -1,0 +1,63 @@
+{
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "sourceType": "module",
+    "parser": "@typescript-eslint/parser"
+  },
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "plugin:vue/vue3-recommended",
+    "eslint:recommended",
+    "@nuxtjs/eslint-config-typescript",
+    "@vue/prettier"
+  ],
+  "plugins": ["@typescript-eslint", "eslint-plugin-prettier"],
+  "globals": {
+    "NodeJS": true
+  },
+  "rules": {
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "order": "asc"
+        }
+      }
+    ],
+    "no-console": "warn",
+    "vue/no-v-html": "off",
+    "quotes": ["error", "single"],
+    "no-undef": "error",
+    "no-unused-vars": "warn",
+    "vue/no-unused-vars": "warn",
+    "vue/no-parsing-error": "warn",
+    "space-before-blocks": ["warn", { "functions": "always" }],
+    "no-irregular-whitespace": "warn",
+    "vue/require-prop-types": "warn",
+    "vue/no-unused-components": "warn",
+    "no-case-declarations": "warn",
+    "vue/no-side-effects-in-computed-properties": "warn",
+    "vue/require-v-for-key": "error",
+    "vue/no-template-shadow": "error",
+    "semi": ["error", "never", { "beforeStatementContinuationChars": "never" }],
+    "semi-spacing": ["error", { "after": true, "before": false }],
+    "semi-style": ["error", "first"],
+    "no-extra-semi": "error",
+    "no-unexpected-multiline": "error",
+    "no-unreachable": "error",
+    "vue/no-mutating-props": "error",
+    "prefer-const": ["warn", { "destructuring": "all" }],
+    "vue/script-setup-uses-vars": "error",
+    "arrow-spacing": ["warn", { "before": true, "after": true }],
+    "keyword-spacing": ["warn", { "before": true, "after": true }],
+    "key-spacing": ["warn", { "afterColon": true }],
+    "vue/multi-word-component-names": "off",
+    "vue/no-setup-props-destructure": "off",
+    "vue/no-useless-template-attributes": "off"
+  }
+}

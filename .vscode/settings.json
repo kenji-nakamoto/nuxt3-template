@@ -1,2 +1,15 @@
 {
+  "git.ignoreLimitWarning": true,
+  "javascript.format.enable": false,
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.tslint": true,
+    "source.fixAll": true
+  },
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "vetur.format.defaultFormatter.js": "none",
+  "cSpell.ignoreWords": [],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
