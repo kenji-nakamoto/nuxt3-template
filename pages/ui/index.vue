@@ -167,6 +167,10 @@
       </div>
     </div>
   </div>
+
+  <div class="mt-6">
+    <UtilsUtilButton custom-class="text-white bg-blue-700 hover:bg-blue-800" label="トースト" />
+  </div>
 </template>
 
 <script lang="ts" setup>
