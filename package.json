@@ -6,7 +6,10 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "test:watch": "vitest",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
@@ -14,10 +17,14 @@
     "@types/node": "^18.17.0",
     "@typescript-eslint/eslint-plugin": "^6.2.0",
     "@typescript-eslint/parser": "^6.2.0",
+    "@vitejs/plugin-vue": "^4.3.3",
+    "@vue/test-utils": "^2.4.1",
     "autoprefixer": "^10.4.15",
     "eslint": "^8.45.0",
     "eslint-plugin-vue": "^9.15.1",
-    "postcss": "^8.4.28"
+    "jsdom": "^22.1.0",
+    "postcss": "^8.4.28",
+    "vitest": "^0.34.2"
   },
   "dependencies": {
     "flowbite": "^1.8.1",
