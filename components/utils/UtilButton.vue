@@ -11,8 +11,8 @@
 <script lang="ts" setup>
 export interface Props {
   label: string
-  customClass: string
-  handleClick: () => void
+  customClass?: string
+  handleClick?: () => void
 }
 
 const props = withDefaults(defineProps<Props>(), {

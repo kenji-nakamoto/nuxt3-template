@@ -1,8 +1,8 @@
-import { describe, test, expect } from 'vitest'
+import { describe, test, expect, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
 import UtilButtonVue from '../../components/utils/UtilButton.vue'
 
-describe('HelloMessage', () => {
+describe('UtilButton', () => {
   test('任意のクラス、ラベルを持ったボタンが表示される', () => {
     const wrapper = mount(UtilButtonVue, {
       props: {
@@ -16,5 +16,19 @@ describe('HelloMessage', () => {
     expect(UtilButton.exists()).toBeTruthy()
     expect(wrapper.text()).toContain('テストボタン')
     expect(wrapper.classes()).toContain('text-white')
+  })
+
+  test('ボタンクリックでhandleClickが実行される', async () => {
+    const handleClickMock = vi.fn(),
+      wrapper = mount(UtilButtonVue, {
+        props: {
+          label: 'テストボタン',
+          customClass: 'text-white bg-blue-700 hover:bg-blue-800',
+          handleClick: handleClickMock,
+        },
+      })
+
+    wrapper.find('button').trigger('click')
+    expect(handleClickMock).toHaveBeenCalledTimes(1)
   })
 })
