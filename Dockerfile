@@ -1,4 +1,4 @@
-FROM node:18.17.0-alpine
+FROM node:18.17.0-alpine as base
 
 ENV LANG C.UTF-8
 RUN apk update && \
@@ -6,17 +6,20 @@ RUN apk update && \
 
 WORKDIR /app
 
-COPY package.json ./
-COPY package-lock.json ./
-COPY .npmrc ./
+FROM base as build
+
+COPY --link package.json ./
+COPY --link package-lock.json ./
+COPY --link .npmrc ./
 
 RUN npm cache clean --force && npm install --quiet
-COPY . .
+COPY --link . .
 
-RUN npm rebuild \
-    && npm install -g nuxi \
-    && npm run build
+RUN npm run build \
+    && npm prune
 
-# COPY .output ./
+FROM base
+
+COPY --from=build /app/.output /app/.output
 
 CMD ["npm", "run", "start"]
