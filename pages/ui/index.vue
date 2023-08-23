@@ -169,12 +169,20 @@
   </div>
 
   <div class="mt-6">
-    <UtilsUtilButton custom-class="text-white bg-blue-700 hover:bg-blue-800" label="トースト" />
+    <UtilsUtilButton
+      custom-class="text-white bg-blue-700 hover:bg-blue-800"
+      label="ボタン"
+      :handleClick="clickButton"
+    />
   </div>
 </template>
 
 <script lang="ts" setup>
 import { initFlowbite } from 'flowbite'
+
+const clickButton = () => {
+  console.log('クリック')
+}
 
 onMounted(() => {
   initFlowbite()
