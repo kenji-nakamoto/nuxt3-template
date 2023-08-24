@@ -1,0 +1,14 @@
+{
+  "parser": {
+    "\\.vue$": "@markuplint/vue-parser"
+  },
+  "specs": {
+    "\\.vue$": "@markuplint/vue-spec"
+  },
+  "extends": [
+    "markuplint:recommended"
+  ],
+  "excludeFiles": [
+    "./node_modules/**"
+  ]
+}
