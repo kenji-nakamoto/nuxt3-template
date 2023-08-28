@@ -1,5 +1,5 @@
-import { describe, test, expect, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
+import { describe, test, expect, vi } from 'vitest'
 import UtilButtonVue from '../../components/utils/UtilButton.vue'
 
 describe('UtilButton', () => {
@@ -19,14 +19,14 @@ describe('UtilButton', () => {
   })
 
   test('ボタンクリックでhandleClickが実行される', async () => {
-    const handleClickMock = vi.fn(),
-      wrapper = mount(UtilButtonVue, {
-        props: {
-          label: 'テストボタン',
-          customClass: 'text-white bg-blue-700 hover:bg-blue-800',
-          handleClick: handleClickMock,
-        },
-      })
+    const handleClickMock = vi.fn()
+    const wrapper = mount(UtilButtonVue, {
+      props: {
+        label: 'テストボタン',
+        customClass: 'text-white bg-blue-700 hover:bg-blue-800',
+        handleClick: handleClickMock,
+      },
+    })
 
     wrapper.find('button').trigger('click')
     expect(handleClickMock).toHaveBeenCalledTimes(1)

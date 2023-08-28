@@ -172,7 +172,7 @@
     <UtilsUtilButton
       custom-class="text-white bg-blue-700 hover:bg-blue-800"
       label="ボタン"
-      :handleClick="clickButton"
+      :handle-click="clickButton"
     />
   </div>
 </template>
@@ -184,6 +184,7 @@ const clickButton = () => {
   console.log('クリック')
 }
 
+// eslint-disable-next-line no-undef
 onMounted(() => {
   initFlowbite()
 })

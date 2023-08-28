@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "start": "node .output/server/index.mjs",
+    "start": "nuxt start",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
@@ -11,7 +11,10 @@
     "test:watch": "vitest",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
-    "lint:html": "markuplint **/*.{html,hbs,vue}"
+    "lint": "eslint --ext .js,.vue --ignore-path .eslintignore .",
+    "lintfix": "eslint --fix --ext .js,.ts,.vue --ignore-path .eslintignore .",
+    "lint:html": "markuplint **/*.{html,hbs,vue}",
+    "format": "prettier --write --list-different ."
   },
   "devDependencies": {
     "@markuplint/vue-parser": "^3.9.0",
@@ -22,13 +25,16 @@
     "@typescript-eslint/eslint-plugin": "^6.2.0",
     "@typescript-eslint/parser": "^6.2.0",
     "@vitejs/plugin-vue": "^4.3.3",
+    "@vue/eslint-config-prettier": "^7.1.0",
     "@vue/test-utils": "^2.4.1",
     "autoprefixer": "^10.4.15",
     "eslint": "^8.45.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.15.1",
     "jsdom": "^22.1.0",
     "markuplint": "^3.12.0",
     "postcss": "^8.4.28",
+    "prettier": "^2.8.8",
     "vitest": "^0.34.2"
   },
   "dependencies": {

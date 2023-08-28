@@ -15,8 +15,9 @@ export interface Props {
   handleClick?: () => void
 }
 
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
   label: () => 'ボタン',
   customClass: () => '',
+  handleClick: () => {},
 })
 </script>
